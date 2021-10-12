@@ -4,9 +4,7 @@ import adaline
 # Load the data set
 
 bc = preparacion_datos.dataf
-
 X = bc.data
-
 y = bc.target
 
 #
