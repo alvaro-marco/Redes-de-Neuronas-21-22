@@ -49,16 +49,14 @@ class Adaline():
 
 # Ciclo principal
 if __name__ == "__main__":
-    # leer la tabla de Excel
-    # tabla = pd.ExcelFile("adaline_Tdata.xlsx")
-    # v_datos = tabla.parse("Hoja1")
-    datos_entrenamiento = pd.read_csv('./datos_entrenamiento.csv', header=0)
+    # leer los datos
+    datos_entrenamiento = pd.read_csv('./datos_entrenamiento2.csv', header=0)
     # Convertir los datos de la tabla de una matriz
     datos_entrenamiento = np.array(datos_entrenamiento)
     # Datos de entrada xi
-    xi = datos_entrenamiento[:,0:5]
+    xi = datos_entrenamiento[:,0:7]
     # Valores deseados
-    d = datos_entrenamiento[:,6]
+    d = datos_entrenamiento[:,8]
     # Número de muestras
     n_muestras = len(d)
     # Establecer el vector de pesos w
