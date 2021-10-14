@@ -27,6 +27,8 @@ class Adaline():
         while (np.abs(E) > self.precision):
             E_prev = Ew
             for i in range(self.n_muestras):
+                #print(self.xi[i,:])
+                #print(self.wi)
                 self.y = sum(self.xi[i,:] * self.wi) # Cálculo de la salida de la red
                 E_ac = (self.d[i] - self.y) # Cálculo del error
                 self.wi = self.wi + (self.fac_ap * E_ac * self.xi[i,:])
@@ -37,6 +39,7 @@ class Adaline():
             E = (Ew - E_prev) # Error de la red
             E_red.append(np.abs(E))
             self.epochs += 1
+            print(E_red)
         return self.wi, self.epochs, E_red
 
     def F_operacion(self):
@@ -50,13 +53,14 @@ class Adaline():
 # Ciclo principal
 if __name__ == "__main__":
     # leer los datos
-    datos_entrenamiento = pd.read_csv('./datos_entrenamiento2.csv', header=0)
+    datos_entrenamiento = pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=';')
     # Convertir los datos de la tabla de una matriz
     datos_entrenamiento = np.array(datos_entrenamiento)
     # Datos de entrada xi
     xi = datos_entrenamiento[:,0:7]
+    #print(xi[1,:])
     # Valores deseados
-    d = datos_entrenamiento[:,8]
+    d = datos_entrenamiento[:,-1]
     # Número de muestras
     n_muestras = len(d)
     # Establecer el vector de pesos w
