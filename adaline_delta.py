@@ -23,8 +23,20 @@ class Adaline():
         Ew = 0 # Error cuadrático medio
         E_red = [] # Error de la red
         E_total = 0 # Error total
+        #while (np.abs(E) > self.precision):
+        
+        Max_ciclo_error = 3
+        Err_count = 0
+        Err_anterior = 0
+        while (Err_count < Max_ciclo_error):
+            print(Err_anterior, E, Err_count)
+            if (Err_anterior == E):
+                Err_count = Err_count + 1
+            else:
+                Err_count = 0
+            Err_anterior = E #Copia el valor anterior del Error de Salida
 
-        while (np.abs(E) > self.precision):
+
             E_prev = Ew
             for i in range(self.n_muestras):
                 #print(self.xi[i,:])
@@ -39,7 +51,7 @@ class Adaline():
             E = (Ew - E_prev) # Error de la red
             E_red.append(np.abs(E))
             self.epochs += 1
-            print(E_red)
+            #print(E_red)
         return self.wi, self.epochs, E_red
 
     def F_operacion(self):
