@@ -62,12 +62,17 @@ class Adaline():
 
 # Ciclo principal
 if __name__ == "__main__":
-    datos_entrenamiento = pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=';') # Obtener los datos del fichero
-    datos_entrenamiento = np.array(datos_entrenamiento) # Convertir los datos de la tabla de una matriz
+    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=';')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
+    datos_validacion = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
     
-    xi = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
-    d = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
-    n_muestras = len(d) # Número de muestras
+    xi_ent = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
+    des_ent = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
+    n_muestras_ent = len(des_ent) # Número de muestras
+
+    xi_val = datos_validacion[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
+    des_val = datos_validacion[:,-1] # Valores deseados (todas las filas, ultima columna)
+    n_muestras_val = len(des_val) # Número de muestras
+    print(xi_val)
 
     np.random.seed(69420)
     wi = np.random.rand(8) # Inicializamos aleatoriamente los pesos con una semilla
@@ -80,7 +85,7 @@ if __name__ == "__main__":
     Max_num_err = 6 # Número máximo de veces que se repite un error
     w_ajustado = [] # Array de pesos de Adaline
     
-    red = Adaline(d, xi, n_muestras, wi, fac_ap,epochs, w_ajustado, Max_ciclo, Max_num_err) # Inicializar la red Adaline
+    red = Adaline(des_ent, xi_ent, n_muestras_ent, wi, fac_ap,epochs, w_ajustado, Max_ciclo, Max_num_err) # Inicializar la red Adaline
     w_ajustado, epochs, error = red.Entrenamiento()
     
     
