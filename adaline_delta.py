@@ -25,7 +25,7 @@ class Adaline():
         E_total = 0 # Error total
         #while (np.abs(E) > self.precision):
         
-        Max_ciclo_error = 3
+        Max_ciclo_error = 4
         Err_count = 0
         Err_anterior = 0
         while (Err_count < Max_ciclo_error):
@@ -69,14 +69,14 @@ if __name__ == "__main__":
     # Convertir los datos de la tabla de una matriz
     datos_entrenamiento = np.array(datos_entrenamiento)
     # Datos de entrada xi
-    xi = datos_entrenamiento[:,0:7]
+    xi = datos_entrenamiento[:,0:8]
     #print(xi[1,:])
     # Valores deseados
     d = datos_entrenamiento[:,-1]
     # Número de muestras
     n_muestras = len(d)
     # Establecer el vector de pesos w
-    wi = np.array([3.12, 2.00, 1.86, 1, 1, 1, 1])
+    wi = np.array([3.12, 2.00, 1.86, 1, 1, 1, 1, 1])
     # Factor de aprendizaje
     fac_ap = 0.3
     # Épocas
