@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import random
 
 class Adaline():
     # Constructor
@@ -114,7 +115,7 @@ class Adaline():
 
         #Err_cuad_ant_test = Err_cuad_med_test
 
-        salidas_test = open("salidas_test.txt", "a")
+        salidas_test = open("salidas_test.txt", "w")
 
         for i in range(self.n_muestras_test):
             self.y_test = sum(self.xi_test[i,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
@@ -128,12 +129,12 @@ class Adaline():
 
         # Calcular el error cuadrático medio
         Err_cuad_med_test = ((1/self.n_muestras_test) * (E_total_test))
-        Err_act_test = (Err_cuad_med_test - Err_cuad_ant_test) # Error de la red
+        #Err_act_test = (Err_cuad_med_test - Err_cuad_ant_test) # Error de la red
         #E_red_test.append(np.abs(Err_act_test))
         #print(Err_act_test)
                 
         #return E_red_test
-        return Err_act_test
+        return Err_cuad_med_test
 
 
 # Ciclo principal
@@ -159,6 +160,9 @@ if __name__ == "__main__":
     wi = np.random.rand(8) # Inicializamos aleatoriamente los pesos con una semilla
     
     fac_ap = 0.0001 # Factor de aprendizaje
+    
+    # El umbral se incializa de forma aleatoria
+    # umbral = random.uniform(0,1)
 
     umbral = 0.5
     
@@ -182,8 +186,8 @@ if __name__ == "__main__":
     plt.xlabel('Ciclos', Fontsize = 12)
     plt.title ("Adaline")
     x = np.arange(ciclos)
-    plt.plot(x, error_ent, 'm->', label = "Error de entrenamiento", color = "green")
-    plt.plot(x, error_val, 'm->', label = "Error de validación", color = "red")
+    plt.plot(x, error_ent, 'm->', color = "green", label = "Error de entrenamiento")
+    plt.plot(x, error_val, 'm->', color = "red", label = "Error de validación")
     plt.legend(loc='upper right')
     plt.show()
     print("Pesos ajustados", w_ajustado)
