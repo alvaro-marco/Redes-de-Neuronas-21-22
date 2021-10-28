@@ -1,0 +1,621 @@
+
+Salida esperada:
+0.7419957703250473
+Salida obtenida:
+0.588014620380244
+Salida esperada:
+0.0752460464743003
+Salida obtenida:
+0.19065627996504025
+Salida esperada:
+0.5552510665317321
+Salida obtenida:
+0.7799713732726197
+Salida esperada:
+0.5353183016150069
+Salida obtenida:
+0.5164016274030293
+Salida esperada:
+0.3297620488292525
+Salida obtenida:
+0.516121909708171
+Salida esperada:
+0.2998629699729156
+Salida obtenida:
+0.30396890622432765
+Salida esperada:
+0.2639840603957658
+Salida obtenida:
+0.3938923749572665
+Salida esperada:
+0.7720194910183006
+Salida obtenida:
+0.6948696521424458
+Salida esperada:
+0.9339729023040464
+Salida obtenida:
+0.6258328089876969
+Salida esperada:
+0.3939205405237458
+Salida obtenida:
+0.3072356849610309
+Salida esperada:
+0.1955899014722786
+Salida obtenida:
+0.32552984428095355
+Salida esperada:
+0.3574187207529268
+Salida obtenida:
+0.2949665437269583
+Salida esperada:
+0.1417715246485991
+Salida obtenida:
+0.201426415678088
+Salida esperada:
+0.2755699707380085
+Salida obtenida:
+0.24816702623099968
+Salida esperada:
+0.6532951452172704
+Salida obtenida:
+0.6442081258099921
+Salida esperada:
+0.4250654273094662
+Salida obtenida:
+0.5065524594107037
+Salida esperada:
+0.5420456096186773
+Salida obtenida:
+0.4057773063472214
+Salida esperada:
+0.4360284399159945
+Salida obtenida:
+0.4683129446224193
+Salida esperada:
+0.3158091520072045
+Salida obtenida:
+0.4456206505285383
+Salida esperada:
+0.1138657060885936
+Salida obtenida:
+0.19869231865142106
+Salida esperada:
+0.7220630676980956
+Salida obtenida:
+0.6624584874509711
+Salida esperada:
+0.4958266100866229
+Salida obtenida:
+0.4422272322820995
+Salida esperada:
+0.3790955370398789
+Salida obtenida:
+0.37365082429209984
+Salida esperada:
+0.3822100257184509
+Salida obtenida:
+0.328343692138387
+Salida esperada:
+0.4625638460835641
+Salida obtenida:
+0.4369224604342289
+Salida esperada:
+0.260620412622908
+Salida obtenida:
+0.26937489672944614
+Salida esperada:
+0.2734521184365795
+Salida obtenida:
+0.2695225878926961
+Salida esperada:
+0.5270960515035767
+Salida obtenida:
+0.3939516537457062
+Salida esperada:
+0.1630746272100318
+Salida obtenida:
+0.40390444055539193
+Salida esperada:
+0.4213280533531345
+Salida obtenida:
+0.6950345836977849
+Salida esperada:
+0.1583406044186023
+Salida obtenida:
+0.2750303663212253
+Salida esperada:
+0.6678709397750328
+Salida obtenida:
+0.4793747863294388
+Salida esperada:
+0.5653419724764414
+Salida obtenida:
+0.4238943466598726
+Salida esperada:
+0.0492089211214381
+Salida obtenida:
+0.19426042486416212
+Salida esperada:
+0.7154603143256588
+Salida obtenida:
+0.5177776249966903
+Salida esperada:
+0.3676342436186431
+Salida obtenida:
+0.32328287423048074
+Salida esperada:
+0.620281552766452
+Salida obtenida:
+0.5033794092435695
+Salida esperada:
+0.3181761758608739
+Salida obtenida:
+0.2584450507315177
+Salida esperada:
+0.5021801420750005
+Salida obtenida:
+0.40732162348032486
+Salida esperada:
+0.3586645286823103
+Salida obtenida:
+0.33925673915090454
+Salida esperada:
+0.176529218301463
+Salida obtenida:
+0.32925482890308627
+Salida esperada:
+0.3391055148649686
+Salida obtenida:
+0.5538479947647008
+Salida esperada:
+0.4107387544721254
+Salida obtenida:
+0.5644831043931199
+Salida esperada:
+0.3785972562251715
+Salida obtenida:
+0.30015489822753216
+Salida esperada:
+0.3462065739680222
+Salida obtenida:
+0.4155890076026097
+Salida esperada:
+0.6369752120835982
+Salida obtenida:
+0.400633660489172
+Salida esperada:
+0.2592500251463815
+Salida obtenida:
+0.3925263986966111
+Salida esperada:
+0.8691914754999744
+Salida obtenida:
+0.6324173396129293
+Salida esperada:
+0.2761928560157682
+Salida obtenida:
+0.24926740900572336
+Salida esperada:
+0.4163448465515098
+Salida obtenida:
+0.5276183672064592
+Salida esperada:
+0.1623271499271745
+Salida obtenida:
+0.37239000280052276
+Salida esperada:
+0.6673726589603254
+Salida obtenida:
+0.5691132707776162
+Salida esperada:
+0.1932228776186091
+Salida obtenida:
+0.28958184969562917
+Salida esperada:
+0.2901457777537256
+Salida obtenida:
+0.28291481842534194
+Salida esperada:
+0.3321290726829219
+Salida obtenida:
+0.4152042761002146
+Salida esperada:
+0.3638968696623114
+Salida obtenida:
+0.30409559247144546
+Salida esperada:
+0.6623894521587007
+Salida obtenida:
+0.6049145180598301
+Salida esperada:
+0.6476890655958407
+Salida obtenida:
+0.5642680707822885
+Salida esperada:
+0.2988663335957726
+Salida obtenida:
+0.2867322324433401
+Salida esperada:
+0.700012475395851
+Salida obtenida:
+0.5955496957141329
+Salida esperada:
+0.3906814473821215
+Salida obtenida:
+0.3111768523616694
+Salida esperada:
+0.5910053716458297
+Salida obtenida:
+0.4740317586452468
+Salida esperada:
+0.7608073193174865
+Salida obtenida:
+0.6199004292040825
+Salida esperada:
+0.3187990611386336
+Salida obtenida:
+0.38661002395812505
+Salida esperada:
+0.5067895728613324
+Salida obtenida:
+0.7056071303698299
+Salida esperada:
+0.0921888648857322
+Salida obtenida:
+0.3087779143804331
+Salida esperada:
+0.1577177066828879
+Salida obtenida:
+0.2712163583244298
+Salida esperada:
+0.1589635021543167
+Salida obtenida:
+0.3733094849348646
+Salida esperada:
+0.6625140067899342
+Salida obtenida:
+0.43783887469360155
+Salida esperada:
+0.3412233671663976
+Salida obtenida:
+0.38311887540147993
+Salida esperada:
+0.6152983957966462
+Salida obtenida:
+0.3949209729726832
+Salida esperada:
+0.0569328530442968
+Salida obtenida:
+0.2782971450579285
+Salida esperada:
+0.4588264721272324
+Salida obtenida:
+0.33097721240968947
+Salida esperada:
+0.6241435311858361
+Salida obtenida:
+0.49137877360169885
+Salida esperada:
+0.5353183016150069
+Salida obtenida:
+0.5163498551688579
+Salida esperada:
+0.2900211982065827
+Salida obtenida:
+0.4984537168852803
+Salida esperada:
+0.1813878081820806
+Salida obtenida:
+0.2847209808843764
+Salida esperada:
+0.497072393100097
+Salida obtenida:
+0.5155642714090376
+Salida esperada:
+0.2887753902771992
+Salida obtenida:
+0.5329996267007022
+Salida esperada:
+0.4028902305441692
+Salida obtenida:
+0.39068738003635056
+Salida esperada:
+0.3908060518451738
+Salida obtenida:
+0.6539340120857271
+Salida esperada:
+0.5183754832035751
+Salida obtenida:
+0.4925004918225946
+Salida esperada:
+0.4315435637608961
+Salida obtenida:
+0.3469891370256605
+Salida esperada:
+0.634981939329312
+Salida obtenida:
+0.6222098555679738
+Salida esperada:
+0.1650678999643179
+Salida obtenida:
+0.25263030483659205
+Salida esperada:
+0.6549147042460373
+Salida obtenida:
+0.6497193334825685
+Salida esperada:
+0.4347826195286562
+Salida obtenida:
+0.3860641163614627
+Salida esperada:
+0.3858228450435491
+Salida obtenida:
+0.41492971474754275
+Salida esperada:
+0.1374112404985982
+Salida obtenida:
+0.2536338489261837
+Salida esperada:
+0.3762302199135472
+Salida obtenida:
+0.3100818911149097
+Salida esperada:
+0.436152994547228
+Salida obtenida:
+0.3755621129086074
+Salida esperada:
+0.444624403752944
+Salida obtenida:
+0.5954557475113436
+Salida esperada:
+0.168057809095747
+Salida obtenida:
+0.34829882775681065
+Salida esperada:
+0.3125700837814896
+Salida obtenida:
+0.4089003347904992
+Salida esperada:
+0.522611187806433
+Salida obtenida:
+0.4890632337651727
+Salida esperada:
+0.7035006902578969
+Salida obtenida:
+0.8366909114827004
+Salida esperada:
+0.1521116270614582
+Salida obtenida:
+0.2963769826547566
+Salida esperada:
+0.1857481047900362
+Salida obtenida:
+0.2551685745690553
+Salida esperada:
+0.431169800203558
+Salida obtenida:
+0.4149893557131681
+Salida esperada:
+0.7920768105662591
+Salida obtenida:
+0.5570695182812452
+Salida esperada:
+0.4640588380231428
+Salida obtenida:
+0.40771114006457
+Salida esperada:
+0.1812632286349378
+Salida obtenida:
+0.21950905276819582
+Salida esperada:
+0.1671857522657469
+Salida obtenida:
+0.2829273114424249
+Salida esperada:
+0.5926249306745965
+Salida obtenida:
+0.5353231141845508
+Salida esperada:
+0.9894107634087644
+Salida obtenida:
+0.47041292144024044
+Salida esperada:
+0.335118981814351
+Salida obtenida:
+0.2583650130049421
+Salida esperada:
+0.967484738195708
+Salida obtenida:
+0.5957114715400986
+Salida esperada:
+0.6068269865909303
+Salida obtenida:
+0.4538761032911881
+Salida esperada:
+0.359411993507213
+Salida obtenida:
+0.4572092084153597
+Salida esperada:
+0.3697520710041628
+Salida obtenida:
+0.5428989909848374
+Salida esperada:
+0.3062165268772026
+Salida obtenida:
+0.32524771995365154
+Salida esperada:
+0.0574311712328683
+Salida obtenida:
+0.21245337713351303
+Salida esperada:
+0.3069639917021052
+Salida obtenida:
+0.3503824656299335
+Salida esperada:
+0.4249408228464139
+Salida obtenida:
+0.314604326096686
+Salida esperada:
+0.2512769465871919
+Salida obtenida:
+0.3779544224789855
+Salida esperada:
+0.3896848359208879
+Salida obtenida:
+0.2942375611330648
+Salida esperada:
+0.5469042119572496
+Salida obtenida:
+0.5594065306293461
+Salida esperada:
+0.3200448566100624
+Salida obtenida:
+0.26282512362034144
+Salida esperada:
+0.2440513328529048
+Salida obtenida:
+0.4251190533047054
+Salida esperada:
+0.5267223377780574
+Salida obtenida:
+0.4277390351789371
+Salida esperada:
+0.3063411064243455
+Salida obtenida:
+0.29846472213049674
+Salida esperada:
+0.5138906568802954
+Salida obtenida:
+0.4539932411901934
+Salida esperada:
+0.0675221145514417
+Salida obtenida:
+0.399665102791641
+Salida esperada:
+0.4945807896992846
+Salida obtenida:
+0.43373970739509976
+Salida esperada:
+0.3413479591714952
+Salida obtenida:
+0.38608003213855147
+Salida esperada:
+0.1582160248714594
+Salida obtenida:
+0.25505532938488124
+Salida esperada:
+0.5239815628250047
+Salida obtenida:
+0.49505682073433854
+Salida esperada:
+0.7832315755134315
+Salida obtenida:
+0.735383608006789
+Salida esperada:
+0.1394045132528843
+Salida obtenida:
+0.33615721515370717
+Salida esperada:
+0.5614800438888762
+Salida obtenida:
+0.41250683081868844
+Salida esperada:
+0.5724430066635855
+Salida obtenida:
+0.42146493859971346
+Salida esperada:
+0.4403886991500859
+Salida obtenida:
+0.39451984728260414
+Salida esperada:
+0.6424567495317491
+Salida obtenida:
+0.3904296170945877
+Salida esperada:
+0.0908184898671605
+Salida obtenida:
+0.27032500158386924
+Salida esperada:
+0.4808770519715224
+Salida obtenida:
+0.44694271030537946
+Salida esperada:
+0.4016444599886498
+Salida obtenida:
+0.4681921183039886
+Salida esperada:
+0.3890619381851735
+Salida obtenida:
+0.39542574435367606
+Salida esperada:
+0.2981188563129153
+Salida obtenida:
+0.32791517722301455
+Salida esperada:
+0.271209674130053
+Salida obtenida:
+0.39785730140809106
+Salida esperada:
+0.5662140293064415
+Salida obtenida:
+0.40607062388682247
+Salida esperada:
+0.3566712310121148
+Salida obtenida:
+0.28936645987626536
+Salida esperada:
+0.4420082457208981
+Salida obtenida:
+0.377237367659913
+Salida esperada:
+0.2328391736100454
+Salida obtenida:
+0.3907755747520945
+Salida esperada:
+0.4568331993729463
+Salida obtenida:
+0.7423150686354403
+Salida esperada:
+0.3672604925192598
+Salida obtenida:
+0.3463042259354713
+Salida esperada:
+0.3481998467223083
+Salida obtenida:
+0.3645444339061038
+Salida esperada:
+0.4985673227499022
+Salida obtenida:
+0.388120954210624
+Salida esperada:
+0.717079860896471
+Salida obtenida:
+0.5677342788760255
+Salida esperada:
+0.9701008962277538
+Salida obtenida:
+0.6123408870752316
+Salida esperada:
+0.3349943898092535
+Salida obtenida:
+0.3047779592896892
+Salida esperada:
+0.6484365553366527
+Salida obtenida:
+0.5929064502215023
+Salida esperada:
+0.715958644972185
+Salida obtenida:
+0.5450604496112733
+Salida esperada:
+0.4900959135441862
+Salida obtenida:
+0.5235340486265111
+Salida esperada:
+0.0954279331114471
+Salida obtenida:
+0.19760260527862283
+Salida esperada:
+0.1138657060885936
+Salida obtenida:
+0.29283717973284895

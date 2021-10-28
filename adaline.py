@@ -89,6 +89,7 @@ class Adaline():
             Err_cuad_med_ent = ((1/self.n_muestras) * (E_total_ent))
             Err_act_ent = (Err_cuad_med_ent - Err_cuad_ant_ent) # Error de la red
             E_red_ent.append(np.abs(Err_act_ent))
+            
             Err_cuad_med_val = ((1/self.n_muestras_val) * (E_total_val))
             Err_act_val = (Err_cuad_med_val - Err_cuad_ant_val) # Error de la red
             E_red_val.append(np.abs(Err_act_val))
@@ -97,7 +98,7 @@ class Adaline():
             if (Err_act_val - Err_ant_val) > 0: #Comprueba que el error anterior no sea menor con un contador
                 counter =counter +1
                 
-        return self.wi, self.epochs, E_red_ent, E_red_val
+        return self.wi, self.epochs, E_red_ent, E_red_val, self.umbral
 
     def Test(self):
         Err_act_test = 1 # Error de salida
@@ -113,17 +114,23 @@ class Adaline():
 
         #Err_cuad_ant_test = Err_cuad_med_test
 
+        salidas_test = open("salidas_test.txt", "a")
+
         for i in range(self.n_muestras_test):
             self.y_test = sum(self.xi_test[i,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
             Err_cuad_act_test = (self.d_test[i] - self.y_test) # Cálculo del error de validación
             E_total_test =  E_total_test + ((Err_cuad_act_test)**2)
+            salidas_test.write("\nSalida esperada:\n")
+            salidas_test.write(str(self.d_test[i]))
+            salidas_test.write("\nSalida obtenida:\n")
+            salidas_test.write(str(self.y_test))
 
 
         # Calcular el error cuadrático medio
         Err_cuad_med_test = ((1/self.n_muestras_test) * (E_total_test))
         Err_act_test = (Err_cuad_med_test - Err_cuad_ant_test) # Error de la red
         #E_red_test.append(np.abs(Err_act_test))
-        print(Err_act_test)
+        #print(Err_act_test)
                 
         #return E_red_test
         return Err_act_test
@@ -131,9 +138,9 @@ class Adaline():
 
 # Ciclo principal
 if __name__ == "__main__":
-    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=';')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
-    datos_validacion = np.array(pd.read_csv('./datos_validacion2.csv', header=0, delimiter=';')) # Convertir los datos de validación de la tabla de una matriz
-    datos_test = np.array(pd.read_csv('./datos_test2.csv', header=0, delimiter=';')) # Convertir los datos de validación de la tabla de una matriz
+    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento.csv', header=0, delimiter=',')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
+    datos_validacion = np.array(pd.read_csv('./datos_validacion.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
+    datos_test = np.array(pd.read_csv('./datos_test.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
 
     xi_ent = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
     des_ent = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
@@ -164,10 +171,10 @@ if __name__ == "__main__":
     print(wi)
     
     red = Adaline(des_ent, xi_ent, n_muestras_ent, des_val, xi_val, n_muestras_val, des_test, xi_test, n_muestras_test, wi, fac_ap,ciclos, umbral, w_ajustado, Max_ciclo, Max_num_err, Max_pos_val) # Inicializar la red Adaline
-    w_ajustado, ciclos, error_ent, error_val = red.Entrenamiento()
+    w_ajustado, ciclos, error_ent, error_val, umbral_ajustado = red.Entrenamiento()
 
     error_test = red.Test()
-    print(error_test)
+    print("El error sobre el conjunto de test una vez finalizado el aprendizaje es: ", error_test)
     
     
     # Dibujamos la Gráfica y sacamos los pesos por pantalla
@@ -180,3 +187,10 @@ if __name__ == "__main__":
     plt.legend(loc='upper right')
     plt.show()
     print("Pesos ajustados", w_ajustado)
+
+    fichero_modelo = open("modelo.txt", "w")
+    fichero_modelo.write("Pesos ajustados:\n")
+    np.savetxt(fichero_modelo, w_ajustado)
+    fichero_modelo.write("\nUmbral:\n")
+    fichero_modelo.write(str(umbral_ajustado))
+    fichero_modelo.close()
