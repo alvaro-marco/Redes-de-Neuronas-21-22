@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class Adaline():
     # Constructor
-    def __init__(self, d, xi, n_muestras, d_val, xi_val, n_muestras_val, wi, fac_ap,epochs, umbral, w_ajustado, Max_ciclo, Max_num_err, Max_pos_val):
+    def __init__(self, d, xi, n_muestras, d_val, xi_val, n_muestras_val, d_test, xi_test, n_muestras_test, wi, fac_ap,epochs, umbral, w_ajustado, Max_ciclo, Max_num_err, Max_pos_val):
         self.d = d
         self.xi = xi
         self.n_muestras = n_muestras
@@ -23,6 +23,11 @@ class Adaline():
         self.n_muestras_val = n_muestras_val
         self.y_val = 0                      # Salida de la red validación
         self.Max_pos_val = Max_pos_val
+        # Variables del conjunto de test
+        self.d_test = d_test
+        self.xi_test = xi_test
+        self.n_muestras_test = n_muestras_test
+        self.y_test = 0
 
     def Entrenamiento(self):
         Err_act_ent = 1 # Error de salida
@@ -75,8 +80,8 @@ class Adaline():
                 E_total_ent =  E_total_ent + ((Err_cuad_act_ent)**2)
 
             for j in range(self.n_muestras_val):
-                self.y = sum(self.xi_val[j,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
-                Err_cuad_act_val = (self.d[j] - self.y) # Cálculo del error de validación
+                self.y_val = sum(self.xi_val[j,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
+                Err_cuad_act_val = (self.d_val[j] - self.y_val) # Cálculo del error de validación
                 E_total_val =  E_total_val + ((Err_cuad_act_val)**2)
 
 
@@ -94,19 +99,42 @@ class Adaline():
                 
         return self.wi, self.epochs, E_red_ent, E_red_val
 
-    def F_operacion(self):
-        salida = []
-        for j in range(self.n_muestras):
-            self.y = sum(self.xi[j,:] * self.w_ajustado)
-            salida.append(self.y)
-        return salida
+    def Test(self):
+        Err_act_test = 1 # Error de salida
+        Err_cuad_act_test = 0 # Error cuadrático actual
+        #Err_ant_test = 0 # Error Anterior
+        Err_cuad_ant_test = 0 # Error cuadrático anterior
+        Err_cuad_med_test = 0 # Error cuadrático medio
+
+        #E_red_test = [] # Error de la red
+        E_total_test = 0 # Error total (se va sumando)
+                
+        #Err_ant_test = Err_act_test # Copia el valor anterior del Error de Salida
+
+        #Err_cuad_ant_test = Err_cuad_med_test
+
+        for i in range(self.n_muestras_test):
+            self.y_test = sum(self.xi_test[i,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
+            Err_cuad_act_test = (self.d_test[i] - self.y_test) # Cálculo del error de validación
+            E_total_test =  E_total_test + ((Err_cuad_act_test)**2)
+
+
+        # Calcular el error cuadrático medio
+        Err_cuad_med_test = ((1/self.n_muestras_test) * (E_total_test))
+        Err_act_test = (Err_cuad_med_test - Err_cuad_ant_test) # Error de la red
+        #E_red_test.append(np.abs(Err_act_test))
+        print(Err_act_test)
+                
+        #return E_red_test
+        return Err_act_test
 
 
 # Ciclo principal
 if __name__ == "__main__":
     datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=';')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
     datos_validacion = np.array(pd.read_csv('./datos_validacion2.csv', header=0, delimiter=';')) # Convertir los datos de validación de la tabla de una matriz
-    
+    datos_test = np.array(pd.read_csv('./datos_test2.csv', header=0, delimiter=';')) # Convertir los datos de validación de la tabla de una matriz
+
     xi_ent = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
     des_ent = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
     n_muestras_ent = len(des_ent) # Número de muestras
@@ -114,6 +142,10 @@ if __name__ == "__main__":
     xi_val = datos_validacion[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
     des_val = datos_validacion[:,-1] # Valores deseados (todas las filas, ultima columna)
     n_muestras_val = len(des_val) # Número de muestras
+
+    xi_test = datos_test[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
+    des_test = datos_test[:,-1] # Valores deseados (todas las filas, ultima columna)
+    n_muestras_test = len(des_test) # Número de muestras
     #print(xi_val)
 
     np.random.seed(69420)
@@ -128,9 +160,14 @@ if __name__ == "__main__":
     Max_num_err = 5 # Número máximo de veces que se repite un error
     w_ajustado = [] # Array de pesos de Adaline
     Max_pos_val = 20
+
+    print(wi)
     
-    red = Adaline(des_ent, xi_ent, n_muestras_ent, des_val, xi_val, n_muestras_val, wi, fac_ap,ciclos, umbral, w_ajustado, Max_ciclo, Max_num_err, Max_pos_val) # Inicializar la red Adaline
+    red = Adaline(des_ent, xi_ent, n_muestras_ent, des_val, xi_val, n_muestras_val, des_test, xi_test, n_muestras_test, wi, fac_ap,ciclos, umbral, w_ajustado, Max_ciclo, Max_num_err, Max_pos_val) # Inicializar la red Adaline
     w_ajustado, ciclos, error_ent, error_val = red.Entrenamiento()
+
+    error_test = red.Test()
+    print(error_test)
     
     
     # Dibujamos la Gráfica y sacamos los pesos por pantalla
