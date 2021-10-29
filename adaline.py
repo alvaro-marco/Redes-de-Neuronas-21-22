@@ -162,9 +162,9 @@ if __name__ == "__main__":
     fac_ap = 0.0001 # Factor de aprendizaje
     
     # El umbral se incializa de forma aleatoria
-    # umbral = random.uniform(0,1)
-
-    umbral = 0.5
+    
+    umbral = random.uniform(0,1)
+    #umbral = 0.5
     
     ciclos = 0 # Número de ciclos
     Max_ciclo = 4000 # Total de ciclos
