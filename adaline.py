@@ -139,9 +139,9 @@ class Adaline():
 
 # Ciclo principal
 if __name__ == "__main__":
-    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento.csv', header=0, delimiter=',')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
-    datos_validacion = np.array(pd.read_csv('./datos_validacion.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
-    datos_test = np.array(pd.read_csv('./datos_test.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
+    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=',')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
+    datos_validacion = np.array(pd.read_csv('./datos_validacion2.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
+    datos_test = np.array(pd.read_csv('./datos_test2.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
 
     xi_ent = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
     des_ent = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     umbral = 0.5
     
     ciclos = 0 # Número de ciclos
-    Max_ciclo = 500 # Total de ciclos
+    Max_ciclo = 4000 # Total de ciclos
     Max_num_err = 5 # Número máximo de veces que se repite un error
     w_ajustado = [] # Array de pesos de Adaline
     Max_pos_val = 20
