@@ -121,10 +121,8 @@ class Adaline():
             self.y_test = sum(self.xi_test[i,:] * self.wi) + umbral # Cálculo de la salida de la red para el conjunto de validación
             Err_cuad_act_test = (self.d_test[i] - self.y_test) # Cálculo del error de validación
             E_total_test =  E_total_test + ((Err_cuad_act_test)**2)
-            salidas_test.write("\nSalida esperada:\n")
-            salidas_test.write(str(self.d_test[i]))
-            salidas_test.write("\nSalida obtenida:\n")
             salidas_test.write(str(self.y_test))
+            salidas_test.write("\n")
 
 
         # Calcular el error cuadrático medio
