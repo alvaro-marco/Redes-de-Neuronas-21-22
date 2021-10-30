@@ -94,7 +94,7 @@ class Adaline():
             Err_cuad_med_val = ((1/self.n_muestras_val) * (E_total_val))
             Err_act_val = (Err_cuad_med_val - Err_cuad_ant_val) # Error de la red
             E_red_val.append(np.abs(Err_act_val))
-            print(self.epochs, Err_act_val, Err_ant_val, (Err_act_val-Err_ant_val))
+            print(self.epochs, Err_act_ent, Err_act_val)
             self.epochs += 1
             if (Err_act_val - Err_ant_val) > 0: #Comprueba que el error anterior no sea menor con un contador
                 counter =counter +1
