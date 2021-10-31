@@ -123,9 +123,9 @@ class Adaline():
 
 # Ciclo principal
 if __name__ == "__main__":
-    datos_entrenamiento = np.array(pd.read_csv('./datos_entrenamiento2.csv', header=0, delimiter=',')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
-    datos_validacion = np.array(pd.read_csv('./datos_validacion2.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
-    datos_test = np.array(pd.read_csv('./datos_test2.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
+    datos_entrenamiento = np.array(pd.read_csv('./train.csv', header=0, delimiter=',')) # Obtener los datos de entrenamiento del fichero y pasarlos a una matriz
+    datos_validacion = np.array(pd.read_csv('./valid.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
+    datos_test = np.array(pd.read_csv('./test.csv', header=0, delimiter=',')) # Convertir los datos de validación de la tabla de una matriz
 
     xi_ent = datos_entrenamiento[:,0:8] # Datos de entrada xi (todas las filas, columnas 0 hasta no inclusivo 8)
     des_ent = datos_entrenamiento[:,-1] # Valores deseados (todas las filas, ultima columna)
