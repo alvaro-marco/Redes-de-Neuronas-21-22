@@ -3,6 +3,8 @@ import numpy as np
 from sklearn import preprocessing
 
 data = pd.read_csv('./vehicle.csv', header=None)
+
+# Se separan los datos en varios conjuntos para no utilizar la columna de los tipos de coche
 data_sin_tipo = data.iloc[:, 0:18]
 data_solo_tipo = data.iloc[:, 18]
 names = data_sin_tipo.columns
@@ -18,15 +20,12 @@ d = scaler.fit_transform(data_sin_tipo)
 dataf = pd.DataFrame(d, columns=names)
 dataf.head()
 
+# Se vuelve a juntar la columna del tipo de coche
 dataf = dataf.join(data_solo_tipo)
-
-#dataf=((data-data.min())/(data.max()-data.min()))
-
-#dataf = preprocessing.normalize(data, axis=0)
 print(dataf)
 
-#Separamos y aleatorizamos los datos en tres sets:
-#   - Entrenamiento (0-70%), validación (70-85%) y validación (85-100%)
+#Separamos y aleatorizamos los datos en dos sets:
+#   - Entrenamiento (2/3) y test (1/3)
 vehicleTrainValid, vehicleTest = np.split(dataf.sample(frac=1), [int((2/3)*len(dataf))])
 
 print(vehicleTrainValid)
